@@ -1,0 +1,276 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/***************************************************************/
+
+
+.container {
+    /* width: 1320px; */
+    margin: 0 auto;
+    padding-left: 12px;
+    padding-right: 12px;
+   }
+.header{
+    /* width: 1920px;
+    height: 96px; */
+    display: flex;
+    color: #FFFFFF;
+    border-bottom: 1px solid #F1F1F1 ;
+    padding: 32px, auto;
+   }
+.logo{
+    /* width: 90px;
+    height: 40px; */
+    padding: 28px 0px 0px 12px;
+}
+.logo img{
+    width: 76px;
+    height: 25.26px;
+    top: 7px;
+    left: 7px;
+}
+.frame1{
+    color:#000000;
+    padding: 32px 0px 0px 318px;
+}
+.frame1 ul{
+    display: flex;
+    justify-content: center;
+}
+.frame1 li{
+    padding-right: 40px;
+    font-size: 16px;
+}
+.menu{
+    font-weight: bold;
+    /* border-style: inset 1px; */
+    border: #000000 1px;
+    border-bottom-left-radius: 250px 100px;
+}
+.title{
+    background-color: #FAFAFA;
+}
+.frame2{
+    /* padding: 80px 0px 188px 625px; */
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+}
+.frame2Text p{
+    position: relative;
+}
+.mark{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+
+}
+.frame2Text{
+    font-size: 24px;
+}
+.frame2Text p{
+    margin: 8px auto;
+    text-align: center;
+    
+}
+.quote-right{
+    float: right;
+}
+.frame2BC
+{
+    padding-top: 24px;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: center;
+}
+.frame2BC p
+{
+    font-size: 16px;
+    line-height: 24px;
+    color:#3B3B3B;
+    ;
+}
+.frame2B{
+    text-align: center;
+}
+.frame2C
+{
+    text-align: center;
+    margin-left: 24px;
+    /* padding-left: 24px; */
+}
+.double-column {
+    overflow: auto; /* 避免浮動元素溢出容器 */
+  }
+.column-item{
+    float: left;
+  width: 50%; /* 設置每個列表項目佔用一半寬度 */
+  box-sizing: border-box; /* 包含邊框和內邊距在內的寬度計算 */
+  padding: 10px; /* 可選擇給列表項目一些內邊距 */
+}
+.column-item:nth-child(2n) {
+    margin-right: 0; /* 每行的最後一個 li 項目移除右側外邊距 */
+  }
+.frame-order{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* max-width:1024px; */
+    
+}
+
+.frame2BC-gray{
+    color: #5B5B5B;
+}
+
+.frame-order img{
+    border-radius: 8px;
+    /* width: 636px;
+    height: 400px; */
+    border: 1px solid #F1F1F1;
+}
+
+.frame-order h2{
+    font-size: 28px;
+    font-weight:bolder;
+    margin: 10px 0px 10px 10px;
+}
+.frame-order p{
+    font-size: 16px;
+    color: #919191;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.tag li{
+    font-size: 16px;
+    display: inline;
+    background-color: #F1F1F1;
+    padding: 6px, 14px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 30px;
+    margin-right:16px;
+    margin-top:24px;
+}
+.frame-num ul{
+    padding-top: 72px;
+    display: flex;
+    justify-content: center;
+}
+.frame-num li{
+    font-size: 24px;
+    display: inline;
+    text-align: center;
+    padding: 2px 13px;
+
+}
+.num1{
+    color: #FFFFFF;
+    background-color: #000000;
+    border-radius: 4px;
+}
+.footer{
+    background-image: url("../img/footer-bg-lg.png");
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center;
+}
+.frame-logo{
+    padding:119px 0px;
+
+}
+.frame-logo img{
+    width: 120px;
+    height: 54px;
+}
+.frame-logo p{
+    font-size: 20px;
+    color: #919191;
+}
+
+.frame-logo-text{
+    padding: 24px 0px;
+}
+.frame-logo-text p{
+    font-size: 20px;
+    color: #3B3B3B;
+    line-height: 30px;
+}
+
+.frame-list{
+    padding: 80px 0px 80px 314px;
+}
+
+.list{
+    display: flex;
+    margin-bottom: 24px;
+    background-color: #000000;
+    border-radius: 8px;
+}
+.list span{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    font-size: 20px;
+    color:#FFFFFF;
+    
+}
+.media{
+    padding: 8px, 24px;
+    display: flex;
+    border: 1px solid #C1C1C1;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+.media span{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}

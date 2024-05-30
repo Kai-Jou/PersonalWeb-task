@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -12,8 +12,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -48,56 +48,160 @@ table {
 }
 
 /***************************************************************/
-
+*, *:before, *:after {
+    box-sizing: border-box;
+}
 
 .container {
-    /* width: 1320px; */
+    max-width: 1296px;
     margin: 0 auto;
-    padding-left: 12px;
-    padding-right: 12px;
+    /* padding-left: 12px;
+    padding-right: 12px; */
    }
-.header{
-    /* width: 1920px;
-    height: 96px; */
-    display: flex;
-    color: #FFFFFF;
-    border-bottom: 1px solid #F1F1F1 ;
-    padding: 32px, auto;
-   }
-.logo{
-    /* width: 90px;
-    height: 40px; */
-    padding: 28px 0px 0px 12px;
+
+@media (max-width:1295px) {
+    .container{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
 }
+
+
+.header{
+    background: #FFF;
+    max-width: 1296px;
+    height: 96px;
+    display: flex;
+    margin: 0 auto;
+    /* color: #FFFFFF; */
+    border-bottom: 1px solid #F1F1F1 ;
+    /* padding: 32px auto; */
+    padding-top: 8px;
+    padding-bottom: 8px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    /* justify-content: center; */
+}
+@media(max-width:992px){
+    .header{
+        justify-content: space-between;
+    }
+   
+}
+.logo{
+    align-content: center;
+    margin-right: 318px;
+}
+
+@media(max-width:992px){
+    .logo {
+      margin-right: 0px;
+    }
+   
+  }
 .logo img{
-    width: 76px;
-    height: 25.26px;
-    top: 7px;
-    left: 7px;
+    width: 100%;
 }
 .frame1{
-    color:#000000;
-    padding: 32px 0px 0px 318px;
+    margin: 0 auto;
+    align-content: center;
 }
-.frame1 ul{
+.frame1ul
+{
+    /* justify-content: center; */
     display: flex;
-    justify-content: center;
+    gap: 40px;
 }
-.frame1 li{
-    padding-right: 40px;
+.frame1ul a{
+    text-decoration: none;
+    color: #000;
     font-size: 16px;
+    line-height: 1.5;
+    text-decoration: none;
+    padding: 4px 8px;
+    position: relative;
 }
-.menu{
-    font-weight: bold;
-    /* border-style: inset 1px; */
-    border: #000000 1px;
-    border-bottom-left-radius: 250px 100px;
+
+.frame1ul .menu a::before,
+.frame1ul .menu a::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #919191;
+  opacity: 0;
+  -webkit-box-reflect: below 16px;
 }
+
+.frame1ul .menu a::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+
+.frame1ul .menu a::after {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+  }
+
+.frame1ul .menu a:hover::before,
+.frame1ul .menu a:hover::after {
+    opacity: 1;
+  }
+
+
+/*****/
+  /*在pc版隱藏起來*/
+  .menu-btn {
+    display: none;
+    cursor: pointer;
+  }
+  .menu-btn .menu-icon {
+    display: none;
+  }
+  .menu-control:checked + .menu-btn .open {
+    display: none;
+  }
+  .menu-control:checked + .menu-btn .close {
+    display: inline;
+  }
+  .menu-control:not(:checked) + .menu-btn .open {
+    display: inline;
+  }
+  .menu-control:not(:checked) + .menu-btn .close {
+    display: none;
+  }
+  .menu-control {
+    display: none;
+  }
+  @media (max-width: 992px) {
+    .menu-btn{
+      display: block;
+    }
+    .frame1ul {
+      display: none;
+    }
+
+    .menu-control:checked ~ .frame1ul {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+
+/********************* header end********************************************/
+
 .title{
+    padding-top: 60px;
     background-color: #FAFAFA;
 }
 .frame2{
-    /* padding: 80px 0px 188px 625px; */
     display: flex;
     justify-content: center;
     padding-top: 80px;
@@ -108,16 +212,17 @@ table {
 .mark{
     position: absolute;
     bottom: 0px;
-    right: 0px;
+    right: 90px;
 
 }
 .frame2Text{
+    width: 670px;
     font-size: 24px;
 }
 .frame2Text p{
     margin: 8px auto;
     text-align: center;
-    
+
 }
 .quote-right{
     float: right;
@@ -138,38 +243,81 @@ table {
 }
 .frame2B{
     text-align: center;
+    width: 298px;
+    height: 84px;
 }
 .frame2C
 {
     text-align: center;
     margin-left: 24px;
     /* padding-left: 24px; */
+    width: 298px;
+    height: 84px;
 }
 .double-column {
-    overflow: auto; /* 避免浮動元素溢出容器 */
-  }
-.column-item{
-    float: left;
-  width: 50%; /* 設置每個列表項目佔用一半寬度 */
-  box-sizing: border-box; /* 包含邊框和內邊距在內的寬度計算 */
-  padding: 10px; /* 可選擇給列表項目一些內邊距 */
-}
-.column-item:nth-child(2n) {
-    margin-right: 0; /* 每行的最後一個 li 項目移除右側外邊距 */
-  }
-.frame-order{
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: center;
-    /* max-width:1024px; */
-    
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+
+.column-item{
+  width: 48%;
+}
+
+@media(max-width: 992px)
+{
+    .double-column{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 992px;
+    }
+    .column-item{
+        width: 98%;
+    }
+
+}
+
+@media(max-width:767px)
+{
+    .double-column{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .column-item{
+        width: 98%;
+    }
+}
+@media(max-width:464px)
+{
+    .double-column{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .column-item{
+        width: 98%;
+    }
+    .tag li{
+        padding: 6px 14px;
+        border-radius: 4px;
+        line-height: 30px;
+    }
 }
 
 .frame2BC-gray{
     color: #5B5B5B;
 }
 
+/********************** title end ***********************************/
+
 .frame-order img{
+    width: 100%;
     border-radius: 8px;
     /* width: 636px;
     height: 400px; */
@@ -192,13 +340,15 @@ table {
     font-size: 16px;
     display: inline;
     background-color: #F1F1F1;
-    padding: 6px, 14px;
+    padding: 6px 14px;
     border-radius: 4px;
     text-align: center;
     line-height: 30px;
     margin-right:16px;
     margin-top:24px;
 }
+
+
 .frame-num ul{
     padding-top: 72px;
     display: flex;
@@ -216,11 +366,23 @@ table {
     background-color: #000000;
     border-radius: 4px;
 }
+
+/************************ content end *********************************/
+
+@media (max-width:426px)
+{
+    .footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .footer{
     background-image: url("../img/footer-bg-lg.png");
     display: flex;
     /* justify-content: space-between; */
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .frame-logo{
     padding:119px 0px;
@@ -245,7 +407,8 @@ table {
 }
 
 .frame-list{
-    padding: 80px 0px 80px 314px;
+    align-content: center;
+    /* padding: 80px 0px 80px 314px; */
 }
 
 .list{
@@ -260,7 +423,8 @@ table {
     flex-wrap: wrap;
     font-size: 20px;
     color:#FFFFFF;
-    
+    padding: 8px 24px;
+
 }
 .media{
     padding: 8px, 24px;
@@ -273,4 +437,5 @@ table {
     display: flex;
     align-content: center;
     flex-wrap: wrap;
+    padding: 8px 24px;
 }
